@@ -1,0 +1,39 @@
+<Page backgroundColor="#212121" loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd"
+    actionBarHidden="true">
+    <ScrollView>
+        <GridLayout rows="auto" columns="*">
+            <GridLayout row="0" rows="*, *, *" class="container"
+                verticalAlignment="center">
+                <StackLayout row="0">
+                    <GridLayout columns="40, *" class="input-money">
+                        <Label class="label-price" textWrap="true" col="0"
+                            text="R$"></Label>
+                        <TextField hint="0.00" text="{{ valorFornecido }}"
+                            class="textfield-price" col="1" keyboardType="number"></TextField>
+                    </GridLayout>
+                    <GridLayout columns="*,*,*">
+                        <Button col="0" class="btn-redesign btn-full" text="Dólar"
+                            tap="{{converterParaDolar}}"></Button>
+                        <Button col="1" class="btn-redesign btn-full-width"
+                            text="Euro" tap="{{converterParaEuro}}"></Button>
+                        <Button col="2" class="btn-redesign btn-full-width"
+                            text="Salvar" tap="{{ salvarStorage}}"></Button>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout row="1" class="stack-result" verticalAlignment="top">
+                    <Label text="Resultado:"></Label>
+                    <Label text="{{ resultado }}"></Label>
+                </StackLayout>
+                <StackLayout row="2" col="0" backgroundColor="#f4f4f4" class="p-10 m-t-20 m-l-5 m-r-5">
+                    <GridLayout columns="*, 60" rows="*" verticalAlignment="bottom">
+                        <StackLayout col="0" verticalAlignment="center">
+                            <Label text="Última Conversão:" />
+                            <Label text="{{ resultadoSalvo || resultadoNow }}"
+                                visibility="{{resultadoSalvo ? 'visibility' : 'collapse'}}" />
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
+</Page>

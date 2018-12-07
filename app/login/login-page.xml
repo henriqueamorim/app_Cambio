@@ -1,0 +1,15 @@
+<Page loaded="pageLoaded" backgroundColor="#212121" class="page" xmlns="http://www.nativescript.org/tns.xsd"
+    actionBarHidden="true">
+    <GridLayout rows="*" columns="*" class="bgColorControl" verticalAlignment="center">
+        <StackLayout row="0" col="0">
+            <Label text="App Câmbio" class="m-t-30 m-b-30 text-center menuTitle"
+                textWrap="true" />
+            <StackLayout orientation="vertical" class="p-10 m-10"
+                verticalAlignment="top">
+                <TextField hint="Email" class="input input-border m-b-25 textField" text="{{ email }}" />
+                <TextField hint="Senha" class="input input-border m-b-25 textField" text="{{ senha }}" />
+                <Button tap="{{ login }}" class="btnSignIn" verticalAlignment="bottom" text="Entrar"></Button>
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>
